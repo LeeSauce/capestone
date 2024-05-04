@@ -24,7 +24,7 @@ public class DBAdapter {
     }
 
     // displays database errors
-    private void sqlErrorHandle (SQLException e){
+    public void sqlErrorHandle (SQLException e){
         System.out.println("Something happened!");
         System.out.println("Error Code : " + e.getErrorCode());
         System.out.println("Error : " + e.getMessage());
