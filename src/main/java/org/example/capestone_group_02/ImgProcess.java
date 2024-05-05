@@ -18,6 +18,7 @@ import java.io.*;
 @WebServlet(name="imgServlet", value="/img-servlet")
 public class ImgProcess extends HttpServlet {
     File dir;
+    File target;
     User user;
     String absolutePath;
     RequestDispatcher rd;
@@ -28,6 +29,7 @@ public class ImgProcess extends HttpServlet {
 
         this.absolutePath = getServletContext().getRealPath("/");
         File root = new File(this.absolutePath);
+        this.target = new File(this.absolutePath + File.separator + "images");
         String parentName;
         String[] files;
         do{
@@ -36,7 +38,10 @@ public class ImgProcess extends HttpServlet {
             parentName = files[files.length - 1];
         }while(!parentName.equals("capestone_group_02"));
 
-        dir = new File(root.getAbsolutePath() + File.separator + "src/main/webapp/images");
+        if(!this.target.exists()){
+            this.target.mkdirs();
+        }
+        this.dir = new File(root.getAbsolutePath() + File.separator + "src/main/webapp/images");
         if(!this.dir.exists()){
             this.dir.mkdir();
         }
@@ -55,14 +60,18 @@ public class ImgProcess extends HttpServlet {
 
         // sets the upload path
         String uploadPath = this.dir.getAbsolutePath()+"/"+imgName;
+        String targetUploadPath = this.target.getAbsolutePath()+"/"+imgName;
         // Writes the data to the upload path
         try{
             OutputStream out = new FileOutputStream(uploadPath);
+            OutputStream targetOut = new FileOutputStream(targetUploadPath);
             InputStream in = img.getInputStream();
             int data;
             while((data = in.read()) != -1){
                 out.write(data);
+                targetOut.write(data);
             }
+            targetOut.close();
             out.close();
             in.close();
         }catch (IOException e){

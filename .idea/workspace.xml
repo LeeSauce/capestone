@@ -12,7 +12,6 @@
     <list default="true" id="5cec4cc4-6fee-4e0f-8222-d19c142ad998" name="Changes" comment="image upload finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/ImgProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/ImgProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/user_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user_page.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +68,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.NewMain.executor": "Debug",
-    "GlassFish Server.GlassFish 7.0.14.executor": "Run",
+    "GlassFish Server.GlassFish 7.0.14.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -228,7 +227,7 @@
       <workItem from="1714765012970" duration="34775000" />
       <workItem from="1714886148249" duration="118000" />
       <workItem from="1714886385435" duration="7485000" />
-      <workItem from="1714898446773" duration="16394000" />
+      <workItem from="1714898446773" duration="17192000" />
     </task>
     <task id="LOCAL-00001" summary="User Register is finished">
       <option name="closed" value="true" />
@@ -254,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714944337626</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="image upload finished">
+      <option name="closed" value="true" />
+      <created>1714950889088</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714950889088</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
