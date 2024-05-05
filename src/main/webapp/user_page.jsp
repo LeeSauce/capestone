@@ -16,7 +16,7 @@
     <title>Image Booru!</title>
     <style>
         img{
-            max-width: 5%;
+            max-width: 20%;
             height: auto;
         }
         td{
