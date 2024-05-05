@@ -60,7 +60,7 @@
         <fieldset>
             <form method="post" action="img-servlet" enctype="multipart/form-data">
                 <input type="file"name="upload" id="upload"
-                       accept=".jpeg, .jpg, .png, .gif" required aria-required="true">
+                       accept=".jpeg, .jpg, .png" required aria-required="true">
                 <input type="submit" value="Upload" id="submit" name="submit">
             </form>
         </fieldset>

@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cec4cc4-6fee-4e0f-8222-d19c142ad998" name="Changes" comment="image upload finished">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/ImgProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/ImgProcess.java" afterDir="false" />
-    </list>
+    <list default="true" id="5cec4cc4-6fee-4e0f-8222-d19c142ad998" name="Changes" comment="fixed file loading problem on run time. I gotta learn a more portable way to do this" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +65,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.NewMain.executor": "Debug",
-    "GlassFish Server.GlassFish 7.0.14.executor": "Debug",
+    "GlassFish Server.GlassFish 7.0.14.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -227,7 +224,7 @@
       <workItem from="1714765012970" duration="34775000" />
       <workItem from="1714886148249" duration="118000" />
       <workItem from="1714886385435" duration="7485000" />
-      <workItem from="1714898446773" duration="17192000" />
+      <workItem from="1714898446773" duration="17584000" />
     </task>
     <task id="LOCAL-00001" summary="User Register is finished">
       <option name="closed" value="true" />
@@ -261,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714950889088</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed file loading problem on run time. I gotta learn a more portable way to do this">
+      <option name="closed" value="true" />
+      <created>1714951783563</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714951783563</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +276,7 @@
     <MESSAGE value="User Register is finished" />
     <MESSAGE value="login set up" />
     <MESSAGE value="image upload finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="image upload finished" />
+    <MESSAGE value="fixed file loading problem on run time. I gotta learn a more portable way to do this" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed file loading problem on run time. I gotta learn a more portable way to do this" />
   </component>
 </project>
