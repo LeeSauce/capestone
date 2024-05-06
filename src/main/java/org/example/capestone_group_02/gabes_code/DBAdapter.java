@@ -47,6 +47,7 @@ public class DBAdapter {
             return false;
         }catch (ClassNotFoundException c){
             System.out.println("Something happened!");
+            System.out.println(c.getMessage());
             return false;
         }
     }
@@ -72,6 +73,7 @@ public class DBAdapter {
             return null;
         }catch (ClassNotFoundException c){
             System.out.println("Something happened!");
+            System.out.println(c.getMessage());
             return null;
         }
     }

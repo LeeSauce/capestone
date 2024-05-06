@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cec4cc4-6fee-4e0f-8222-d19c142ad998" name="Changes" comment="fixed file loading problem on run time. I gotta learn a more portable way to do this" />
+    <list default="true" id="5cec4cc4-6fee-4e0f-8222-d19c142ad998" name="Changes" comment="gifs don't always load as well... got rid of them">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/mysql-connector-j-8.2.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/DBAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/DBAdapter.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +75,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/gabelee/IdeaProjects/capestone_group_02/src/img",
+    "last_opened_file_path": "/Users/gabelee/IdeaProjects/capestone_group_02/src/main/webapp/WEB-INF/lib",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,9 +95,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib" />
       <recent name="$PROJECT_DIR$/src/img" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/target/capestone_group_02-1.0-SNAPSHOT" />
@@ -224,7 +229,8 @@
       <workItem from="1714765012970" duration="34775000" />
       <workItem from="1714886148249" duration="118000" />
       <workItem from="1714886385435" duration="7485000" />
-      <workItem from="1714898446773" duration="17584000" />
+      <workItem from="1714898446773" duration="19100000" />
+      <workItem from="1714953656136" duration="701000" />
     </task>
     <task id="LOCAL-00001" summary="User Register is finished">
       <option name="closed" value="true" />
@@ -266,17 +272,37 @@
       <option name="project" value="LOCAL" />
       <updated>1714951783563</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="gifs don't always load as well... got rid of them">
+      <option name="closed" value="true" />
+      <created>1714952297767</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714952297767</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="User Register is finished" />
     <MESSAGE value="login set up" />
     <MESSAGE value="image upload finished" />
     <MESSAGE value="fixed file loading problem on run time. I gotta learn a more portable way to do this" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed file loading problem on run time. I gotta learn a more portable way to do this" />
+    <MESSAGE value="gifs don't always load as well... got rid of them" />
+    <option name="LAST_COMMIT_MESSAGE" value="gifs don't always load as well... got rid of them" />
   </component>
 </project>
