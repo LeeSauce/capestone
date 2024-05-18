@@ -29,23 +29,15 @@ public class UserDAO {
      * @throws SQLException if a database access error occurs
      */
     
-    public User getUser(String username, String password) throws SQLException {
+    public ResultSet getUser(String username, String password) throws SQLException {
         ResultSet resultSet = dbAdapter.readTable("CALL User_Login(?,?)", username, password);
-        if (resultSet != null && resultSet.next()) {
-            return UserFactory.createUser(
-                resultSet.getInt("id"),
-                resultSet.getString("username"),
-                resultSet.getString("password"),
-                resultSet.getString("email")
-            );
-        }
-        return null;
+        return resultSet;
     }
 
     // Insert a new user into the database
-    public boolean insertUser(String username, String password, String email) {
-        String insertQuery = "CALL Insert_User(?,?,?)"; // Example SQL procedure for inserting a new user
-        return dbAdapter.modifyTable(insertQuery, username, password, email);
+    public boolean insertUser(String username,String email, String password) {
+        String insertQuery = "CALL Create_User(?,?,?)"; // Example SQL procedure for inserting a new user
+        return dbAdapter.modifyTable(insertQuery, username, email, password);
     }
 
     // Update user information in the database

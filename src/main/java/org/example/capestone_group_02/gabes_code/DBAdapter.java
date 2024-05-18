@@ -1,106 +1,123 @@
 package org.example.capestone_group_02.gabes_code;
 
 import java.sql.*;
-
+/**
+ * The DBAdapter class manages the database connection and provides methods for executing SQL queries
+ * and handling exceptions.
+ */
 public class DBAdapter {
-    protected final String URL = "jdbc:mysql://localhost:3306/CAPSTONE?useSSL=false";
-    protected final String USER = "groupmem";
-    protected final String PASS = "111";
-
+    private static DBAdapter instance;
     private Connection connection;
-    private PreparedStatement prepared;
-    private ResultSet results;
-    private String sql;
-
-
-    // connects to a database
-    private void connectToDB() throws SQLException, ClassNotFoundException {
+    private final String URL = "jdbc:mysql://localhost:3306/CAPSTONE?useSSL=false";
+    private final String USER = "groupmem";
+    private final String PASS = "111";
+    
+    /**
+     * Private constructor to ensure singleton pattern. Establishes a database connection
+     * when the instance is created.
+     *
+     * @throws SQLException            if a database access error occurs
+     * @throws ClassNotFoundException if the class cannot be found
+     */
+    
+    private DBAdapter() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        connection = DriverManager.getConnection(this.URL, this.USER, this.PASS);
+        this.connection = DriverManager.getConnection(URL, USER, PASS);
     }
-    // disconnects from database
-    public void disconnectFromDB() throws SQLException {
-        connection.close();
-    }
+    
+    /**
+     * Returns the instance of the DBAdapter class. If the instance is null, it creates a new one.
+     *
+     * @return the DBAdapter instance
+     * @throws SQLException            if a database access error occurs
+     * @throws ClassNotFoundException if the class cannot be found
+     */
+    
 
-    // displays database errors
-    public void sqlErrorHandle (SQLException e){
+    public static DBAdapter getInstance() throws SQLException, ClassNotFoundException {
+        if (instance == null) {
+            instance = new DBAdapter();
+        }
+        return instance;
+    }
+    
+    /**
+     * Closes the database connection.
+     *
+     * @throws SQLException if a database access error occurs
+     */
+    
+    public void disconnectFromDB() throws SQLException {
+        if (connection != null && !connection.isClosed()) {
+            connection.close();
+        }
+    }
+    
+    /**
+     * Handles SQL exceptions by printing error details.
+     *
+     * @param e the SQLException object
+     */
+    
+    public void sqlErrorHandle(SQLException e) {
         System.out.println("Something happened!");
         System.out.println("Error Code : " + e.getErrorCode());
         System.out.println("Error : " + e.getMessage());
     }
 
-    // a flexible method that can handle Creating, Updating, and Deleting rows from a database
-    public boolean modifyTable(String storedProcedure, String... args){
-        this.sql = storedProcedure;
-        try{
-            connectToDB();
-            this.prepared = this.connection.prepareStatement(this.sql);
-            for(int i = 0; i < args.length; i++){
-                this.prepared.setString(i+1, args[i]);
+    /**
+     * Executes a modification SQL query.
+     *
+     * @param storedProcedure the SQL stored procedure
+     * @param args            the arguments for the stored procedure
+     * @return true if the query is successful, false otherwise
+     */
+    
+    public boolean modifyTable(String storedProcedure, String... args) {
+        String sql = storedProcedure;
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            for (int i = 0; i < args.length; i++) {
+                preparedStatement.setString(i + 1, args[i]);
             }
-            this.prepared.executeUpdate();
-            disconnectFromDB();
+            preparedStatement.executeUpdate();
             return true;
-        }catch (SQLException e){
+        } catch (SQLException e) {
             sqlErrorHandle(e);
-            return false;
-        }catch (ClassNotFoundException c){
-            System.out.println("Something happened!");
-            System.out.println(c.getMessage());
             return false;
         }
     }
-
-    // returns a result set for reading rows
-    public ResultSet readTable(String storedProcedure, String... args){
-        this.sql = storedProcedure;
-        try {
-            connectToDB();
-
-            this.prepared = this.connection.prepareStatement(this.sql,
+    
+    /**
+     * Executes a read SQL query.
+     *
+     * @param storedProcedure the SQL stored procedure
+     * @param args            the arguments for the stored procedure
+     * @return a ResultSet object containing the data produced by the query
+     */
+    
+    public ResultSet readTable(String storedProcedure, String... args) {
+        String sql = storedProcedure;
+        ResultSet resultSet = null;
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(sql,
                     ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            // this part will only run if arguments are passed
-            if(args.length > 0){
-                for(int i = 0; i < args.length; i++){
-                    this.prepared.setString(i+1, args[i]);
+            if (args.length > 0) {
+                for (int i = 0; i < args.length; i++) {
+                    preparedStatement.setString(i + 1, args[i]);
                 }
             }
-            this.results = this.prepared.executeQuery();
-            return results;
-        }catch (SQLException e){
+            resultSet = preparedStatement.executeQuery();
+            return resultSet;
+        } catch (SQLException e) {
             sqlErrorHandle(e);
             return null;
-        }catch (ClassNotFoundException c){
-            System.out.println("Something happened!");
-            System.out.println(c.getMessage());
-            return null;
         }
     }
-
-}
-
-class Main {
-    public static void main(String[] args) throws SQLException {
-        DBAdapter db = new DBAdapter();
-        String createUser = "CALL Create_User(?,?,?);";
-
-        /*if(db.modifyTable(createUser, "Gabe", "gabe@email.com", "111")){
-            System.out.println("Inserted Values!");
-        }*/
-
-        // this is just for testing purposed. Store procedures should only be passed here
-        ResultSet resultSet = db.readTable("SELECT * FROM USER WHERE userId = ?;", "1");
-        resultSet.next();
-        StringBuilder builder = new StringBuilder();
-        ResultSetMetaData metaData = resultSet.getMetaData();
-        for(int i = 1; i <= metaData.getColumnCount(); i ++){
-            builder.append(resultSet.getString(i));
-            if(i != metaData.getColumnCount()){
-                builder.append(", ");
-            }
-        }
-        String row = builder.toString();
-        System.out.println(row);
-    }
+    
+    /**
+     * Main method for testing the DBAdapter class.
+     *
+     * @param args the command-line arguments
+     * @throws SQLException if a database access error occurs
+     */
 }

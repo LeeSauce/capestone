@@ -3,14 +3,11 @@
 <%@ page import="org.example.capestone_group_02.gabes_code.DBAdapter" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="java.sql.SQLException" %><%--
-  Created by IntelliJ IDEA.
-  User: gabelee
-  Date: 2024-05-04
-  Time: 1:02 p.m.
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="java.lang.ClassNotFoundException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
 <html>
 <head>
     <title>Image Booru!</title>
@@ -20,7 +17,7 @@
             height: auto;
         }
         td{
-            margin : 25px 25px 25px 25px
+            margin : 25px 25px 25px 25px;
         }
     </style>
 </head>
@@ -34,22 +31,22 @@
         ArrayList<String> ImgNames = new ArrayList<>();
         String username = null;
         if (user != null) {
-            // todo: I need to make some sort of connection between the user and the database to get images
             username = user.getUsername();
-            writer.println("<h1>"+"Welcome "+username+"!"+"</h1>");
+            writer.println("<h1>Welcome " + username + "!</h1>");
 
-            DBAdapter db = new DBAdapter();
-            ResultSet results;
-            String userId = Integer.toString(user.getId());
-            try{
+            // Using Singleton pattern to get DBAdapter instance
+            DBAdapter db = null;
+            try {
+                db = DBAdapter.getInstance(); // Get the singleton instance
+                ResultSet results;
+                String userId = Integer.toString(user.getId());
                 results = db.readTable("CALL Get_Img(?)", userId);
-                while(!results.isLast()) {
-                    results.next();
+                while (results.next()) {
                     String imgName = results.getString(1);
                     ImgNames.add(imgName);
                 }
-            }catch (SQLException e){
-                db.sqlErrorHandle(e);
+            } catch (SQLException | ClassNotFoundException e) {
+                writer.println("<p>Error accessing database: " + e.getMessage() + "</p>");
             }
 
             session.setAttribute("passedUser", user);
@@ -59,23 +56,23 @@
     <div class="main_part">
         <fieldset>
             <form method="post" action="img-servlet" enctype="multipart/form-data">
-                <input type="file"name="upload" id="upload"
-                       accept=".jpeg, .jpg, .png" required aria-required="true">
+                <input type="file" name="upload" id="upload" accept=".jpeg, .jpg, .png" required aria-required="true">
                 <input type="submit" value="Upload" id="submit" name="submit">
             </form>
         </fieldset>
     </div>
 
     <div>
+        <form method="get" action="logout-servlet">
+            <input type="submit" value="Logout" name="logout" id="logout">
+        </form>
+    </div>
+
+    <div>
         <table>
-            <%// I am too lazy to set up another fileInput stream so this will do for the sake of simplicity
-                for(String imgName : ImgNames){
-                    writer.println("<tr>");
-                    writer.println("<td>");
-                    writer.println("<img src=\""+path+"/"+imgName+"\" alt=\""+imgName+"\">");
-                    writer.println("</td>");
-                }
-            %>
+            <% for (String imgName : ImgNames) {
+                writer.println("<tr><td><img src=\"" + path + "/" + imgName + "\" alt=\"" + imgName + "\"></td></tr>");
+            } %>
         </table>
     </div>
 

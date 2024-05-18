@@ -1,7 +1,5 @@
 package org.example.capestone_group_02.gabes_code;
 
-import java.util.ArrayList;
-
 public class User {
     private int id;
     private String username;

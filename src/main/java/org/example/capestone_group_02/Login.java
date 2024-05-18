@@ -8,64 +8,92 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.example.capestone_group_02.gabes_code.DBAdapter;
 import org.example.capestone_group_02.gabes_code.User;
+import org.example.capestone_group_02.gabes_code.UserDAO;
 
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-@WebServlet (name = "loginServlet", value = "/login_servlet")
+/**
+ * The Login servlet handles user login functionality.
+ */
+@WebServlet(name = "loginServlet", value = "/login_servlet")
 public class Login extends HttpServlet {
 
+    // Declarations
     DBAdapter db;
     ResultSet resultSet;
     RequestDispatcher rd;
 
+    /**
+     * Initializes the servlet and sets up database connection.
+     */
     @Override
     public void init() throws ServletException {
-        this.db = new DBAdapter();
+        try {
+            // Use Singleton instance for database connection
+            this.db = DBAdapter.getInstance();
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new ServletException("Failed to initialize database connection", e);
+        }
     }
 
+    /**
+     * Handles login POST requests.
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        // Retrieve username and password from request
         String username = req.getParameter("username");
         String passwd = req.getParameter("passwd");
 
-        this.resultSet = this.db.readTable("CALL User_Login(?,?)", username, passwd);
+        try {
+            // Check user credentials in the database
+            this.resultSet = new UserDAO().getUser(username, passwd);
+            if (resultSet != null && resultSet.next()) {
+                // If user exists, retrieve user details
+                Object[] objects = sortUserCredentials(this.resultSet);
 
-        try{
-            // if all goes well here then a new user object will be passed to the user_page JSP file
-            Object[] objects = sortUserCredentials(this.resultSet);
+                int id = (int) objects[0];
+                String user = (String) objects[1];
+                String email = (String) objects[2];
+                String pass = (String) objects[3];
 
-            int id = (int)objects[0];
-            String user = (String)objects[1];
-            String email = (String)objects[2];
-            String pass = (String)objects[3];
-
-            req.setAttribute("user", new User(id, user, email, pass));
-
-            this.rd = req.getRequestDispatcher("user_page.jsp");
-            this.rd.forward(req, resp);
-        }catch (SQLException e){
+                // Forward user to user_page.jsp
+                req.setAttribute("user", new User(id, user, email, pass));
+                this.rd = req.getRequestDispatcher("user_page.jsp");
+                this.rd.forward(req, resp);
+            } else {
+                // If login fails, forward user to login.jsp with fail attribute set to true
+                req.setAttribute("fail", "true");
+                this.rd = req.getRequestDispatcher("login.jsp");
+                this.rd.forward(req, resp);
+            }
+        } catch (SQLException e) {
+            // Handle database errors
             this.db.sqlErrorHandle(e);
             req.setAttribute("fail", "true");
             this.rd = req.getRequestDispatcher("login.jsp");
             this.rd.forward(req, resp);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    // this method will sort out the user credentials if a result was returned
-    private Object[] sortUserCredentials(ResultSet resultSet)throws SQLException {
+    /**
+     * Retrieves user credentials from ResultSet.
+     */
+    private Object[] sortUserCredentials(ResultSet resultSet) throws SQLException {
         Object[] objects = new Object[4];
-        resultSet.next();
         ResultSetMetaData metaData = resultSet.getMetaData();
 
-        for(int i = 1; i <= metaData.getColumnCount(); i++){
-            if(i == 1){
-                objects[i-1] = resultSet.getInt(i);
-            }else{
-                objects[i-1] = resultSet.getString(i);
+        // Iterate through ResultSet and store user credentials in an object array
+        for (int i = 1; i <= metaData.getColumnCount(); i++) {
+            if (i == 1) {
+                objects[i - 1] = resultSet.getInt(i);
+            } else {
+                objects[i - 1] = resultSet.getString(i);
             }
         }
         return objects;
