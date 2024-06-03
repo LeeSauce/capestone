@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Image Booru!</title>
+    <title>Taskify</title>
     <meta charset="UTF-8">
 </head>
 <body>
-<h1><%= "Image Booru!" %>
+<h1><%= "Taskify!" %>
 </h1>
 <br/>
     <div class ="main-section">

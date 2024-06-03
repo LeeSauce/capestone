@@ -8,10 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Image Booru!</title>
+    <title>Taskify</title>
 </head>
 <body>
-<h1><%= "Image Booru!" %>
+<h1><%= "Taskify" %>
 </h1>
 <br/>
 <div class ="main-section">

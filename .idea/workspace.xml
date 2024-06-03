@@ -9,42 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cec4cc4-6fee-4e0f-8222-d19c142ad998" name="Changes" comment="fixup! 1.Singleton Pattern is used for Database Connection 2.Factory Pattern for User Creation 3.Data Access Object (DAO) Pattern">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/ImgThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/session-exp.jsp" afterDir="false" />
+    <list default="true" id="5cec4cc4-6fee-4e0f-8222-d19c142ad998" name="Changes" comment="Multi threading added, logout fixe, UserDAO methods implemented">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/edit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/src/main/java/org/example/capestone_group_02/ImgProcess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/src/main/java/org/example/capestone_group_02/Login.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/src/main/java/org/example/capestone_group_02/Logout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/Logout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/src/main/java/org/example/capestone_group_02/Register.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/src/main/java/org/example/capestone_group_02/gabes_code/DBAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/src/main/java/org/example/capestone_group_02/gabes_code/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/src/main/java/org/example/capestone_group_02/gabes_code/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/src/main/java/org/example/capestone_group_02/gabes_code/UserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/UserFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/src/main/webapp/WEB-INF/lib/mysql-connector-j-8.2.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/src/main/webapp/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/src/main/webapp/logout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/src/main/webapp/register.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/capestone_group_02/src/main/webapp/user_page.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/ImgProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/ImgProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/DBAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/DBAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/ImgThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/ImgThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/session-exp.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/session-exp.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user_page.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -109,7 +81,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.NewMain.executor": "Debug",
-    "GlassFish Server.GlassFish 7.0.14.executor": "Run",
+    "GlassFish Server.GlassFish 7.0.14.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "PartThree",
@@ -120,9 +92,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.16041666",
+    "project.structure.side.proportion": "0.11724138",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   },
@@ -279,7 +251,14 @@
       <workItem from="1715122765653" duration="269000" />
       <workItem from="1715838882146" duration="866000" />
       <workItem from="1715839776157" duration="6997000" />
-      <workItem from="1715990899662" duration="6045000" />
+      <workItem from="1715990899662" duration="10585000" />
+      <workItem from="1716330575455" duration="877000" />
+      <workItem from="1716338272019" duration="10000" />
+      <workItem from="1716340277915" duration="390000" />
+      <workItem from="1716428421997" duration="23000" />
+      <workItem from="1716428494874" duration="6000" />
+      <workItem from="1716503671246" duration="602000" />
+      <workItem from="1717302527260" duration="28542000" />
     </task>
     <task id="LOCAL-00001" summary="User Register is finished">
       <option name="closed" value="true" />
@@ -337,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714954641748</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Multi threading added, logout fixe, UserDAO methods implemented">
+      <option name="closed" value="true" />
+      <created>1716007289318</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716007289318</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +361,23 @@
     <MESSAGE value="gifs don't always load as well... got rid of them" />
     <MESSAGE value="driver jar needed to be re added" />
     <MESSAGE value="fixup! 1.Singleton Pattern is used for Database Connection 2.Factory Pattern for User Creation 3.Data Access Object (DAO) Pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixup! 1.Singleton Pattern is used for Database Connection 2.Factory Pattern for User Creation 3.Data Access Object (DAO) Pattern" />
+    <MESSAGE value="Multi threading added, logout fixe, UserDAO methods implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Multi threading added, logout fixe, UserDAO methods implemented" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/ImgThread.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/ImgThread.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
