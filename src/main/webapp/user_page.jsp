@@ -11,15 +11,8 @@
 <html>
 <head>
     <title>Taskify</title>
-    <style>
-        img{
-            width: auto;
-            max-height: 200px;
-        }
-        td{
-            margin : 25px 25px 25px 25px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body>
 
@@ -68,7 +61,9 @@
     %>
 
     <div class="main_part">
+        <br>
         <fieldset>
+            <h2>Upload</h2>
             <form method="post" action="img-servlet" enctype="multipart/form-data">
                 <label for="title">Title: </label>
                 <input type="text" id="title" name="title" aria-required="false">
@@ -100,16 +95,16 @@
                 <input type="submit" value="Upload" id="submit" name="submit">
             </form>
         </fieldset>
-    </div>
 
-    <div>
+
+    <div class="logout">
         <form method="get" action="logout-servlet">
             <input type="submit" value="Logout" name="logout" id="logout">
         </form>
     </div>
 
     <div>
-        <table>
+        <table class="search">
             <tr>
                 <td>Search: </td>
                 <td><a href="img-servlet?action=all">All</a></td>
@@ -119,7 +114,7 @@
                 <td><a href="img-servlet?action=draft">Draft</a></td>
             </tr>
         </table>
-        <table>
+        <div class="posts"><table>
 
             <% int count = 4;
                 for (String[] post : posts) {
@@ -147,7 +142,8 @@
                 <%count = 4; }%>
             <%}%>
 
-        </table>
+        </table></div>
+    </div>
     </div>
 
 </body>

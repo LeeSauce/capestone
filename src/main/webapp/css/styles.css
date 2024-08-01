@@ -1,0 +1,43 @@
+
+img{
+      width: auto;
+      max-height: 200px;
+}
+td{
+    margin : 25px 25px 25px 25px;
+    text-align: center;
+}
+.posts,.search,.logout{
+    display: flex;
+    justify-content: center;
+}
+
+fieldset{
+    flex-direction: column-reverse;
+    margin-left: 30%;
+    margin-right: 30%;
+    border: solid black 3px;
+    background-color: white;
+}
+.main_part{
+    background-color: white;
+    margin-right: 15%;
+    margin-left: 15%;
+}
+h1{
+    padding: 30px;
+    text-align: center;
+    text-decoration: underline;
+    color:white;
+    font-size: xx-large;
+}
+body{
+    background-color: rgb(78, 208, 106);
+}
+a, a:checked{
+    color: lightgreen;
+}
+a:hover{
+    color: greenyellow;
+    font-size: large;
+}

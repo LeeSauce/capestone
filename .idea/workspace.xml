@@ -9,14 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cec4cc4-6fee-4e0f-8222-d19c142ad998" name="Changes" comment="Multi threading added, logout fixe, UserDAO methods implemented">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/edit.jsp" afterDir="false" />
+    <list default="true" id="5cec4cc4-6fee-4e0f-8222-d19c142ad998" name="Changes" comment="All the updates are finished and working">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/ImgProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/ImgProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/ImgThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/ImgThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/edit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/session-exp.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/session-exp.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user_page.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,33 +76,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.NewMain.executor": "Debug",
-    "GlassFish Server.GlassFish 7.0.14.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "PartThree",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/gabelee/IdeaProjects/capestone_group_02/src/main/webapp/WEB-INF",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.11724138",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NewMain.executor&quot;: &quot;Debug&quot;,
+    &quot;GlassFish Server.GlassFish 7.0.14.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;PartThree&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/gabelee/IdeaProjects/capestone_group_02/src/main/webapp/WEB-INF&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.11724138&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
@@ -258,7 +257,10 @@
       <workItem from="1716428421997" duration="23000" />
       <workItem from="1716428494874" duration="6000" />
       <workItem from="1716503671246" duration="602000" />
-      <workItem from="1717302527260" duration="28542000" />
+      <workItem from="1717302527260" duration="29715000" />
+      <workItem from="1717471590316" duration="975000" />
+      <workItem from="1717510742411" duration="4946000" />
+      <workItem from="1720801071842" duration="78000" />
     </task>
     <task id="LOCAL-00001" summary="User Register is finished">
       <option name="closed" value="true" />
@@ -324,7 +326,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716007289318</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="All the updates are finished and working">
+      <option name="closed" value="true" />
+      <created>1717414865770</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717414865770</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +372,8 @@
     <MESSAGE value="driver jar needed to be re added" />
     <MESSAGE value="fixup! 1.Singleton Pattern is used for Database Connection 2.Factory Pattern for User Creation 3.Data Access Object (DAO) Pattern" />
     <MESSAGE value="Multi threading added, logout fixe, UserDAO methods implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Multi threading added, logout fixe, UserDAO methods implemented" />
+    <MESSAGE value="All the updates are finished and working" />
+    <option name="LAST_COMMIT_MESSAGE" value="All the updates are finished and working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -373,9 +384,9 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/gabes_code/ImgThread.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="28" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/capestone_group_02/Register.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

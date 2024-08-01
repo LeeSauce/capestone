@@ -5,6 +5,7 @@
 <head>
     <title>Taskify</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <h1><%= "Taskify!" %>

@@ -44,7 +44,7 @@ public class Register extends HttpServlet {
 
         try {
             // Attempt to create a new user in the database
-            if (new UserDAO().insertUser(username, password,email)) {
+            if (new UserDAO().insertUser(username,email,password)) {
                 // If successful, set status attribute to success
                 request.setAttribute("status", "success");
             } else {
